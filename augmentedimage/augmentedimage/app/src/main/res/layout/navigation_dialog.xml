@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="205dp"
+    android:layout_height="273dp">
+
+    <ListView
+        android:id="@+id/navigation_dialog_list"
+        android:layout_width="205dp"
+        android:layout_height="273dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp" />
+</LinearLayout>

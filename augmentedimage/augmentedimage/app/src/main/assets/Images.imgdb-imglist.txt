@@ -1,0 +1,4 @@
+Industry.png|C:/Users/User/Pictures/Image/Industry.png
+management.png|C:/Users/User/Pictures/Image/management.png
+medical.png|C:/Users/User/Pictures/Image/medical.png
+navigation.png|C:/Users/User/Pictures/Image/navigation.png

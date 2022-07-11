@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="512dp"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="512dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/questionText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/title"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:text="TextView"
+            android:textColor="#8FE3FC"
+            android:textSize="40dp"
+            app:layout_constraintBottom_toTopOf="@+id/editQuestion"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="512dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:layout_width="256dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/sizedno"
+                android:text="Yes"
+                android:id="@+id/YesButton"
+                android:textColor="#8FE3FC"></Button>
+            <Button
+                android:layout_width="256dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/sizedno"
+                android:text="No"
+                android:id="@+id/NoButton"
+                android:textColor="#8FE3FC"></Button>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

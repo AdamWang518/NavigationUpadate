@@ -1,9 +1,12 @@
 package com.google.ar.sceneform.samples.ModelAction;
 
 import android.content.Context;
+import android.graphics.drawable.ColorDrawable;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -192,7 +195,14 @@ public class Navigation {
         View v = li.inflate(R.layout.navigation_dialog,null);
         alertDialog.setView(v);
         dialog = alertDialog.create();
+        final Window window = dialog.getWindow();
+        //window.setLayout(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        window.setBackgroundDrawable(new ColorDrawable(0));
+
         dialog.show();
+        window.setGravity(Gravity.CENTER);
+        dialog.getWindow().setLayout(460, 819);
+
         ListView dialoglist=v.findViewById(R.id.navigation_dialog_list);
         dialoglist.setOnItemClickListener(itemClickListener);
         dialoglist.setAdapter(adapter);

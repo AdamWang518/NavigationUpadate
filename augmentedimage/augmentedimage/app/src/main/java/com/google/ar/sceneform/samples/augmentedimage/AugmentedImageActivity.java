@@ -73,6 +73,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * This application demonstrates using augmented images to place anchor nodes. app to include image
@@ -192,14 +194,26 @@ public  class AugmentedImageActivity extends AppCompatActivity {
             frame.getUpdatedTrackables(AugmentedImage.class);
     for (AugmentedImage augmentedImage : updatedAugmentedImages) {
       SnackbarHelper.getInstance().showMessage(this, augmentedImage.getTrackingState().toString());
+      if(augmentedImage.getTrackingState().toString().equals("PAUSED")){
+        Toast toast=Toast.makeText(this, "掃描中", Toast.LENGTH_LONG);
+//        showMyToast(toast, 500);
+//        //Toast.makeText(this, "掃描中", Toast.LENGTH_SHORT).show();
+      }
+      else if(augmentedImage.getTrackingState().toString().equals("TRACKING")){
+        Toast.makeText(this, "掃描完成", Toast.LENGTH_SHORT).show();
+//        Toast toast=Toast.makeText(this, "掃描完成", Toast.LENGTH_LONG);
+//        showMyToast(toast, 500);
+      }
       //Log.d("leolog",augmentedImage.getTrackingState().toString());
-      SnackbarHelper.getInstance().showMessage(this, augmentedImage.getTrackingState().toString());
+      //SnackbarHelper.getInstance().showMessage(this, augmentedImage.getTrackingState().toString());
       switch (augmentedImage.getTrackingState()) {
         case PAUSED:
           // When an image is in PAUSED state, but the camera is not PAUSED, it has been detected,
           // but not yet tracked.
           String text = "Detected Image: " + augmentedImage.getName();
+
           SnackbarHelper.getInstance().showMessage(this, text);
+          //需要修復
           break;
 
         case TRACKING:
@@ -394,6 +408,23 @@ public  class AugmentedImageActivity extends AppCompatActivity {
     }
 
 
+  }
+
+  public void showMyToast(final Toast toast, final int cnt) {
+    final Timer timer = new Timer();
+    timer.schedule(new TimerTask() {
+      @Override
+      public void run() {
+        toast.show();
+      }
+    }, 0, 3000);
+    new Timer().schedule(new TimerTask() {
+      @Override
+      public void run() {
+        toast.cancel();
+        timer.cancel();
+      }
+    }, cnt );
   }
 
 

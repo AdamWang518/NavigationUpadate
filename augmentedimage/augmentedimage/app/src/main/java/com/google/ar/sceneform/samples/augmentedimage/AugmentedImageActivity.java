@@ -195,9 +195,9 @@ public  class AugmentedImageActivity extends AppCompatActivity {
     for (AugmentedImage augmentedImage : updatedAugmentedImages) {
       SnackbarHelper.getInstance().showMessage(this, augmentedImage.getTrackingState().toString());
       if(augmentedImage.getTrackingState().toString().equals("PAUSED")){
-        Toast toast=Toast.makeText(this, "掃描中", Toast.LENGTH_LONG);
+        //Toast toast=Toast.makeText(this, "掃描中", Toast.LENGTH_LONG);
 //        showMyToast(toast, 500);
-//        //Toast.makeText(this, "掃描中", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "掃描中", Toast.LENGTH_SHORT).show();
       }
       else if(augmentedImage.getTrackingState().toString().equals("TRACKING")){
         Toast.makeText(this, "掃描完成", Toast.LENGTH_SHORT).show();
